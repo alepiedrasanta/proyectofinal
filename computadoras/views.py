@@ -30,7 +30,7 @@ def compus_nueva(request):
          formulario = computadorasform()
     return render(request,'computadoras/compus_nueva.html', {'formulario': formulario})
 @login_required
-def area_editar(request,pk):
+def compus_editar(request,pk):
     publicaciones = get_object_or_404(compus, pk = pk)
     if request.method =="POST":
         formulario = computadorasform(request.POST, instance=publicaciones)
@@ -42,3 +42,9 @@ def area_editar(request,pk):
     else:
         formulario = computadorasform(instance=publicaciones)
     return render(request,'computadoras/compus_editar.html', {'formulario': formulario})
+@login_required
+def compus_borrar(request,pk):
+    publicacion = get_object_or_404(compus, pk=pk)
+    publicacion.delete()
+    publicaciones = compus.objects.all()
+    return render(request,'computadoras/compus_lista.html', {'publicaciones': publicaciones})

@@ -4,5 +4,4 @@ from .models import compus
 class computadorasform(forms.ModelForm):
     class Meta:
         model = compus
-        fields = ('nombre',)
-
+        fields = ('marca', 'detalle', 'precio',)

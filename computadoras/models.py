@@ -7,4 +7,4 @@ class compus(models.Model):
     detalle  =   models.CharField(max_length=150)
     precio  =   models.CharField(max_length=150)
     def __str__(self):
-        return self.nombre
+        return self.marca

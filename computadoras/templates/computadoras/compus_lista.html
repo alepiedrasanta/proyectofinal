@@ -4,7 +4,9 @@
     {% for publicacion in publicaciones %}
         <div class="post">
             <td>
-                {{ publicacion.nombre }}
+                {{ publicacion.marca }}
+                {{ publicacion.detalle }}
+                {{ publicacion.precio }}
                 <h2><a href="{% url 'compus_detalle' pk=publicacion.pk %}">Detalles</a></h2>
             </td>
         </div>
