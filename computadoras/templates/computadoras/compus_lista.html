@@ -1,0 +1,12 @@
+{% extends 'computadoras/base.html' %}
+{% block content %}
+    <h2><a  href="{% url 'compus_nueva' %}">crear</a></h2>
+    {% for publicacion in publicaciones %}
+        <div class="post">
+            <td>
+                {{ publicacion.nombre }}
+                <h2><a href="{% url 'compus_detalle' pk=publicacion.pk %}">Detalles</a></h2>
+            </td>
+        </div>
+    {% endfor %}
+{% endblock %}
