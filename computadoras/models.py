@@ -1,3 +1,10 @@
 from django.db import models
+from django.utils import timezone
 
-# Create your models here.
+
+class compus(models.Model):
+    marca  =   models.CharField(max_length=150)
+    detalle  =   models.CharField(max_length=150)
+    precio  =   models.CharField(max_length=150)
+    def __str__(self):
+        return self.nombre
